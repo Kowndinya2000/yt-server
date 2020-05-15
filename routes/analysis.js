@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-let {PythonShell} = require('python-shell')
+let {PythonShell} = require('python-shell') 
 let pyshell = new PythonShell('ocr.py')
 router.post('/', function(req, res, next) {
   req.header('Access-Control-Allow-Origin', '*')
