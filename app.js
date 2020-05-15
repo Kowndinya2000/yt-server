@@ -23,8 +23,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/analysis', analysisRouter);
+app.use('https://yt-coder.herokuapp.com', indexRouter);
+app.use('https://yt-coder.herokuapp.com/analysis', analysisRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));
