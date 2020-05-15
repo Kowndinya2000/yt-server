@@ -11,7 +11,6 @@ app.use(bodyParser.json())
 app.use(cors({
     credentials: true,
 }))
-var indexRouter = require('./routes/index');
 var analysisRouter = require('./routes/analysis')
 
 app.set('views', path.join(__dirname, 'views'));
