@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.get('https://yt-coder.herokuapp.com', function(req, res, next) {
+app.get('https://yt-coder.herokuapp.com/', function(req, res, next) {
 req.header('Access-Control-Allow-Origin', '*');
 res.render('index',{
   message:req.query.m})
