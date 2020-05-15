@@ -58,9 +58,31 @@ while success:
 cap.release()
 cv2.destroyAllWindows()
 print('Image creation Success!')
+from PIL import Image
+import pytesseract
+from wand.image import Image as Img
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.tag import pos_tag
+demo = Image.open("frame.jpg")
+text = pytesseract.image_to_string(demo,lang='eng')
+print(text)
 
-import numpy as np
-img = cv2.imread('frame.jpg')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # def get_grayscale(image):
 #     return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 # def remove_noise(image):
@@ -105,8 +127,3 @@ img = cv2.imread('frame.jpg')
 # thresh = thresholding(img)
 # opening = opening(gray)
 # canny = canny(gray)
-import pytesseract
-custom_config = r'--oem 3 --psm 6'
-# C:\Users\DELL\AppData\Local\Tesseract-OCR
-pytesseract.pytesseract.tesseract_cmd = r"C:\Users\DELL\AppData\Local\Tesseract-OCR\tesseract.exe"
-pytesseract.image_to_string(img, config=custom_config)
